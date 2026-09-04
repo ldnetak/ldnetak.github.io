@@ -2,640 +2,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laxman D. Netak — Research Publications</title>
 
-    <title>Dr. Laxman D. Netak - Publications</title>
-
-    <!-- Existing Common CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* PUBLICATION PAGE */
-
-        .publication-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .publication-header h1 {
-            margin-bottom: 8px;
-        }
-
-        .publication-header p {
-            color: #666;
-        }
-
-        .publication-list {
-            margin-top: 20px;
-        }
-
-        .year-title {
-            background-color: #2c3e50;
-            color: white;
-            padding: 10px 15px;
-            margin-top: 25px;
-            border-radius: 5px;
-            font-size: 20px;
-        }
-
-        .publication {
-            background-color: #f9f9f9;
-            padding: 15px;
-            margin: 12px 0;
-            border-left: 4px solid #2c3e50;
-            border-radius: 5px;
-        }
-
-        .publication-title {
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 8px;
-        }
-
-        .authors {
-            color: #444;
-            margin-bottom: 5px;
-        }
-
-        .journal {
-            color: #555;
-            font-style: italic;
-        }
-
-        .publication-details {
-            color: #666;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        /* SEARCH */
-        .search-box {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            font-size: 15px;
-            box-sizing: border-box;
-        }
-
-        /* MOBILE */
-        @media (max-width: 700px) {
-            .container {
-                padding: 20px;
-            }
-
-            .year-title {
-                font-size: 18px;
-            }
-
-            .publication {
-                padding: 12px;
-            }
-        }
-    </style>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#172033;--muted:#65708a;--accent:#2457c5;--line:#dfe5ef;--soft:#eef3ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.45}
+.container{max-width:1180px;margin:auto;padding:22px 16px 40px}
+.hero{background:linear-gradient(135deg,#183b87,#315fca);color:#fff;border-radius:16px;padding:24px 22px;margin-bottom:16px;box-shadow:0 8px 25px #0001}
+.hero h1{margin:0 0 5px;font-size:28px}
+.hero p{margin:0;opacity:.9}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px;text-align:center}
+.stat b{display:block;font-size:23px;color:var(--accent)}
+.controls{position:sticky;top:8px;z-index:5;background:#ffffffef;backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:13px;padding:11px;margin:12px 0 18px;box-shadow:0 5px 18px #0000000a}
+.grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:9px}
+input,select,button{width:100%;padding:10px 11px;border:1px solid #cfd7e5;border-radius:9px;background:#fff;font:inherit}
+button{cursor:pointer;background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+button.secondary{background:#fff;color:var(--ink);border-color:#cfd7e5}
+.year{margin:18px 0}
+.year summary{list-style:none;cursor:pointer;background:var(--soft);border:1px solid #d6e0fa;border-radius:11px;padding:11px 14px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.year summary::-webkit-details-marker{display:none}
+.count{font-size:12px;background:#fff;border:1px solid #d6e0fa;padding:3px 8px;border-radius:20px;color:var(--accent)}
+.pub{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px;margin:8px 0}
+.pub h3{font-size:16px;line-height:1.35;margin:0 0 7px}
+.meta{color:var(--muted);font-size:13px}
+.badge{display:inline-block;padding:3px 7px;border-radius:20px;background:#edf1f7;margin-right:5px;font-size:11px;font-weight:700}
+.key{font-family:monospace;color:#6b7280;font-size:11px;margin-top:7px}
+.empty{text-align:center;padding:35px;color:var(--muted);display:none}
+.footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:center}
+@media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.hero h1{font-size:23px}}
+</style>
 </head>
 
 <body>
 
-<!-- =========================
-     NAVIGATION BAR
-     ========================= -->
+<!-- NAVIGATION BAR -->
 <div class="navbar">
     <a href="index.html">Home</a>
     <a href="research.html">Research</a>
-    <a href="publications.html" class="active">Publications</a>
+    <a href="publications.html">Publications</a>
     <a href="teaching.html">Teaching</a>
     <a href="Activities.html">Activities</a>
 </div>
 
-
-<!-- =========================
-     MAIN CONTAINER
-     ========================= -->
 <div class="container">
 
-    <div class="publication-header">
-        <h1>Research Publications</h1>
-        <p>Dr. Laxman D. Netak</p>
-    </div>
-
-    <!-- SEARCH -->
-    <input
-        type="text"
-        id="searchBox"
-        class="search-box"
-        placeholder="Search publications by title, author, journal or year..."
-        onkeyup="searchPublications()"
-    >
-
-
-    <div id="publicationList" class="publication-list">
-
-        <!-- =========================
-             2026
-             ========================= -->
-        <h2 class="year-title">2026</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L.; Chowdhary, G.
-            </div>
-
-            <div class="publication-title">
-                Study of Different Burst Scheduling Algorithms Using FDLs as QoS in Wavelength Division Multiplexing OBS Networks
-            </div>
-
-            <div class="journal">
-                International Conference on Communication and Signal Processing
-            </div>
-
-            <div class="publication-details">
-                2016 | Conference Publication
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2025
-             ========================= -->
-        <h2 class="year-title">2025</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2025
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2025
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2024
-             ========================= -->
-        <h2 class="year-title">2024</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2024
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2024
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2023
-             ========================= -->
-        <h2 class="year-title">2023</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2023
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2023
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2022
-             ========================= -->
-        <h2 class="year-title">2022</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2022
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2022
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2021
-             ========================= -->
-        <h2 class="year-title">2021</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2021
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2021
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2020
-             ========================= -->
-        <h2 class="year-title">2020</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2020
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2020
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2019
-             ========================= -->
-        <h2 class="year-title">2019</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2019
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2019
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2016
-             ========================= -->
-        <h2 class="year-title">2016</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L.; Chowdhary, G.
-            </div>
-
-            <div class="publication-title">
-                Study of Different Burst Scheduling Algorithms Using FDLs as QoS in Wavelength Division Multiplexing OBS Networks
-            </div>
-
-            <div class="journal">
-                International Conference on Communication and Signal Processing 2016
-            </div>
-
-            <div class="publication-details">
-                2016 | Conference Publication
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2014
-             ========================= -->
-        <h2 class="year-title">2014</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2014
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2014
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2013
-             ========================= -->
-        <h2 class="year-title">2013</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2013
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2013
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2012
-             ========================= -->
-        <h2 class="year-title">2012</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2012
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2012
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2011
-             ========================= -->
-        <h2 class="year-title">2011</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2011
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2011
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2010
-             ========================= -->
-        <h2 class="year-title">2010</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2010
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2010
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2008
-             ========================= -->
-        <h2 class="year-title">2008</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2008
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2008
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2007
-             ========================= -->
-        <h2 class="year-title">2007</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2007
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2007
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2006
-             ========================= -->
-        <h2 class="year-title">2006</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2006
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2006
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2005
-             ========================= -->
-        <h2 class="year-title">2005</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2005
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2005
-            </div>
-        </div>
-
-
-        <!-- =========================
-             2001
-             ========================= -->
-        <h2 class="year-title">2001</h2>
-
-        <div class="publication">
-            <div class="authors">
-                Netak, L. D.
-            </div>
-
-            <div class="publication-title">
-                Research Publication - 2001
-            </div>
-
-            <div class="journal">
-                Research Publication
-            </div>
-
-            <div class="publication-details">
-                2001
-            </div>
-        </div>
-
-    </div>
+<section class="hero">
+<h1>Dr. Laxman D. Netak</h1>
+<p>Research Publications — Year-wise, Searchable & Filterable</p>
+</section>
+
+<div class="stats">
+<div class="stat"><b id="total">0</b>Total Records</div>
+<div class="stat"><b id="years">0</b>Years</div>
+<div class="stat"><b id="journals">0</b>Journal / Article</div>
+<div class="stat"><b id="conf">0</b>Conference</div>
+</div>
+
+<div class="controls">
+<div class="grid">
+<input id="search" placeholder="Search title, author, venue, keyword...">
+<select id="year"><option value="">All Years</option></select>
+<select id="type">
+<option value="">All Types</option>
+<option>Journal / Article</option>
+<option>Conference</option>
+<option>Book Chapter</option>
+</select>
+</div>
+
+<div style="display:flex;gap:8px;margin-top:9px">
+<button class="secondary" id="expand">Expand all years</button>
+<button class="secondary" id="collapse">Collapse all years</button>
+<button class="secondary" id="reset">Reset</button>
+</div>
+</div>
+
+<div id="results"></div>
+
+<div id="empty" class="empty">
+No publications match your search.
+</div>
+
+<div class="footer">
+Source data: BibTeX records supplied for this page. The page does not claim that the list is a complete Google Scholar profile.
+</div>
 
 </div>
 
-
-<!-- =========================
-     SEARCH SCRIPT
-     ========================= -->
 <script>
-function searchPublications() {
 
-    let input = document.getElementById("searchBox");
-    let filter = input.value.toLowerCase();
+const publications=[
+{"key":"netak2016study","type":"Conference","year":"2016","title":"Study of different burst scheduling algorithms using FDLs as QoS in wavelength division multiplexing OBS networks","author":"Netak, L and Chowdhary, G","venue":"International Conference on Communication and Signal Processing 2016 (ICCASP 2016)","pages":"680--688","volume":"","number":"","publisher":"Atlantis Press"},
 
-    let publications = document.getElementsByClassName("publication");
-    let years = document.getElementsByClassName("year-title");
+{"key":"gurav2008hybrid","type":"Conference","year":"2008","title":"Hybrid Genetic Algorithm Based Task Scheduling in Heterogeneous Grid","author":"Gurav, Uma B and Netak, LD","venue":"Proceedings of SPIT-IEEE Colloquium and International Conference, Mumbai, India","pages":"","volume":"","number":"","publisher":""},
 
-    for (let i = 0; i < publications.length; i++) {
+{"key":"kiwelekar2019architectural","type":"Book Chapter","year":"2019","title":"An architectural perspective of learning analytics","author":"Kiwelekar, Arvind W and Laddha, Manjushree D and Netak, Laxman D and Gandhi, Sanil","venue":"Machine Learning Paradigms: Advances in Learning Analytics","pages":"115--130","volume":"","number":"","publisher":"Springer International Publishing Cham"},
 
-        let text = publications[i].innerText.toLowerCase();
+{"key":"netak2006efficient","type":"Journal / Article","year":"2006","title":"Efficient Network Management Using SNMP: Netak and Kiwelekar","author":"Netak, Laxman D and Kiwelekar, Arvind W","venue":"Journal of Network and Systems Management","pages":"189--194","volume":"14","number":"2","publisher":"Springer US Boston"},
 
-        if (text.includes(filter)) {
-            publications[i].style.display = "";
-        } else {
-            publications[i].style.display = "none";
-        }
-    }
+{"key":"netak2012composite","type":"Journal / Article","year":"2012","title":"A Composite Scheduling Approach for Burst Loss Minimization in Optical Burst Switched Networks","author":"Netak, Laxman D and Chowdhary, Girish V and Borade, Jyoti G and Suryawanshi, Vinay","venue":"Journal of Emerging Trends in Computing and Information Sciences","pages":"","volume":"3","number":"8","publisher":"Citeseer"},
 
-    /* Hide year headings when no publication is visible */
-    for (let i = 0; i < years.length; i++) {
+{"key":"netak2011reverse","type":"Conference","year":"2011","title":"Reverse scheduling approach for burst loss minimization in WDM OBS based networks","author":"Netak, Laxman D and Chowdhary, Girish V and Suryawanshi, Vinay N and Borade, Jyoti","venue":"2011 2nd International Conference on Computer and Communication Technology (ICCCT-2011)","pages":"517--523","volume":"","number":"","publisher":"IEEE"},
 
-        let year = years[i].nextElementSibling;
-        let visible = false;
+{"key":"netak2010analysis","type":"Conference","year":"2010","title":"Analysis of Effect of Different Factors on Burst Dropping Probability in Optical Burst Switching Network","author":"Netak, Laxman D and Udmale, Sandeep S and Chowdhary, Girish V and Tajanpure, Rupali","venue":"International Conference on Future Generation Information Technology","pages":"99--113","volume":"","number":"","publisher":"Springer Berlin Heidelberg Berlin, Heidelberg"},
 
-        while (year && !year.classList.contains("year-title")) {
+{"key":"netak2014tree","type":"Conference","year":"2014","title":"Tree-based batching and serialization of overlapping bursts to reduce losses in OBS networks","author":"Netak, Laxman D and Chowdhary, Girish V and Teke, Aishwarya R","venue":"2014 International Conference and Workshop on the Network of the Future (NOF)","pages":"1--2","volume":"","number":"","publisher":"IEEE"},
 
-            if (year.classList.contains("publication") &&
-                year.style.display !== "none") {
-                visible = true;
-                break;
-            }
+{"key":"kiwelekar2020deep","type":"Book Chapter","year":"2020","title":"Deep learning techniques for geospatial data analysis","author":"Kiwelekar, Arvind W and Mahamunkar, Geetanjali S and Netak, Laxman D and Nikam, Valmik B","venue":"Machine learning paradigms: advances in deep learning-based technological applications","pages":"63--81","volume":"","number":"","publisher":"Springer International Publishing Cham"},
 
-            year = year.nextElementSibling;
-        }
+{"key":"lokare2020blended","type":"Journal / Article","year":"2020","title":"A blended approach for teaching laboratory course: Internet technology","author":"Lokare, Varsha T and Jhetam, Iram and Kiwelekar, AW and Netak, LD","venue":"Journal of Engineering Education Transformations","pages":"41--51","volume":"","number":"","publisher":""},
 
-        years[i].style.display = visible ? "" : "none";
-    }
+{"key":"kiwelekar2021blockchain","type":"Book Chapter","year":"2021","title":"Blockchain-based security services for fog computing","author":"Kiwelekar, Arvind W and Patil, Pramod and Netak, Laxman D and Waikar, Sanjay U","venue":"Fog/Edge computing for security, privacy, and applications","pages":"271--290","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"lokare2021increasing","type":"Journal / Article","year":"2021","title":"Increasing students engagement during virtual classroom teaching through effective use of online tools","author":"Lokare, Varsha T and Kiwelekar, AW and Barphe, Sapana S and Netak, LD and Jadhav, PM","venue":"Journal of Engineering Education Transformations","pages":"44--49","volume":"","number":"","publisher":""},
+
+{"key":"borade2020automated","type":"Conference","year":"2020","title":"Automated grading of essays: a review","author":"Borade, Jyoti G and Netak, Laxman D","venue":"International Conference on Intelligent Human Computer Interaction","pages":"238--249","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"laddha2020correlation","type":"Conference","year":"2020","title":"A correlation analysis between cognitive process and knowledge dimension in software engineering by using the revised bloom’s taxonomy","author":"Laddha, Manjushree D and Netak, Laxman D and Wankhede, Hansaraj S","venue":"International Conference on Intelligent Human Computer Interaction","pages":"34--41","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"lokare2020concentration","type":"Conference","year":"2020","title":"Concentration level prediction system for the students based on physiological measures using the EEG device","author":"Lokare, Varsha T and Netak, Laxman D","venue":"International Conference on Intelligent Human Computer Interaction","pages":"24--33","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"patil2021decentralized","type":"Book Chapter","year":"2021","title":"A decentralized and autonomous model to administer university examinations","author":"Patil, Yogesh N and Kiwelekar, Arvind W and Netak, Laxman D and Deosarkar, Shankar B","venue":"Blockchain Technology for IoT Applications","pages":"119--134","volume":"","number":"","publisher":"Springer Singapore Singapore"},
+
+{"key":"garg2021pulse","type":"Journal / Article","year":"2021","title":"i-Pulse: A NLP based novel approach for employee engagement in logistics organization","author":"Garg, Rachit and Kiwelekar, Arvind W and Netak, Laxman D and Ghodake, Akshay","venue":"International Journal of Information Management Data Insights","pages":"100011","volume":"1","number":"1","publisher":"Elsevier"},
+
+{"key":"laddha2021classifications","type":"Journal / Article","year":"2021","title":"Classifications of the summative assessment for revised blooms taxonomy by using deep learning","author":"Laddha, Manjushree D and Lokare, Varsha T and Kiwelekar, Arvind W and Netak, Laxman D","venue":"arXiv preprint arXiv:2104.08819","pages":"","volume":"","number":"","publisher":""},
+
+{"key":"garg2021personalization","type":"Book Chapter","year":"2021","title":"Personalization of news for a logistics organisation by finding relevancy using NLP","author":"Garg, Rachit and Kiwelekar, Arvind W and Netak, Laxman D and Bhate, Swapnil S","venue":"Modern Approaches in Machine Learning and Cognitive Science: A Walkthrough: Latest Trends in AI, Volume 2","pages":"215--226","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"garg2021potential","type":"Book Chapter","year":"2021","title":"Potential use-cases of natural language processing for a logistics organization","author":"Garg, Rachit and Kiwelekar, Arvind W and Netak, Laxman D and Bhate, Swapnil S","venue":"Modern approaches in machine learning and cognitive science: A walkthrough: Latest trends in AI, volume 2","pages":"157--191","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"manjushree2021performance","type":"Journal / Article","year":"2021","title":"Performance analysis of the impact of technical skills on employability","author":"Manjushree, D Laddha and Varsha, T Lokare and Arvind, W Kiwelekar and Laxman, D Netak","venue":"International Journal of Performability Engineering","pages":"371","volume":"17","number":"4","publisher":""},
+
+{"key":"garg2021logistics","type":"Journal / Article","year":"2021","title":"Logistics and Freight Transportation Management: An NLP based Approach for Shipment Tracking.","author":"Garg, Rachit and Kiwelekar, Arvind Wamanrao and Netak, Laxman Damodar","venue":"Pertanika Journal of Science \\& Technology","pages":"2745","volume":"29","number":"4","publisher":""},
+
+{"key":"mahajan2021predicting","type":"Conference","year":"2021","title":"Predicting expected time of arrival of shipments through multiple linear regression","author":"Mahajan, Prasad C and Kiwelekar, Arvind W and Netak, Laxman D and Ghodake, Akshay B","venue":"ICDSMLA 2020: Proceedings of the 2nd International Conference on Data Science, Machine Learning and Applications","pages":"343--350","volume":"","number":"","publisher":"Springer Singapore Singapore"},
+
+{"key":"laddha2021predict","type":"Conference","year":"2021","title":"To predict employability of student by using artificial neural network","author":"Laddha, Manjushree D and Kiwelekar, Arvind W and Netak, Laxman D and Mahajan, Prasad C","venue":"ICDSMLA 2020: Proceedings of the 2nd International Conference on Data Science, Machine Learning and Applications","pages":"675--682","volume":"","number":"","publisher":"Springer Singapore Singapore"},
+
+{"key":"borade2022feature","type":"Book Chapter","year":"2022","title":"Feature extraction for automatic grading of students’ presentations","author":"Borade, Jyoti G and Kiwelekar, Arvind W and Netak, Laxman D","venue":"ICT Systems and Sustainability: Proceedings of ICT4SD 2021, Volume 1","pages":"293--301","volume":"","number":"","publisher":"Springer Nature Singapore Singapore"},
+
+{"key":"mahamunkar2022mapping","type":"Book Chapter","year":"2022","title":"Mapping and change detection of mangroves using remote sensing and Google Earth engine: a case study","author":"Mahamunkar, Geetanjali S and Kiwelekar, Arvind W and Netak, Laxman D","venue":"ICT Systems and Sustainability: Proceedings of ICT4SD 2021, Volume 1","pages":"187--195","volume":"","number":"","publisher":"Springer Nature Singapore Singapore"},
+
+{"key":"lokare2022analysis","type":"Journal / Article","year":"2022","title":"Analysis of the influence of physiological and cognition measures in higher education using machine learning","author":"Lokare, Varsha T and Kiwelekar, Arvind W and Netak, Laxman D","venue":"International Journal of Performability Engineering","pages":"117","volume":"18","number":"2","publisher":""},
+
+{"key":"lokare2021cognition","type":"Conference","year":"2021","title":"Cognition Prediction Model for MOOCs Learners Based on ANN","author":"Lokare, Varsha T and Netak, Laxman D and Jadhav, NS","venue":"International Conference on Intelligent Human Computer Interaction","pages":"173--183","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"mukkawar2021technological","type":"Conference","year":"2021","title":"Technological evaluation of virtual and augmented reality to impart social skills","author":"Mukkawar, Vinayak V and Netak, Laxman D","venue":"International conference on intelligent human computer interaction","pages":"62--73","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"borade2021machine","type":"Conference","year":"2021","title":"Machine Learning Techniques for Grading of PowerPoint Slides","author":"Borade, Jyoti G and Netak, Laxman D","venue":"International Conference on Intelligent Human Computer Interaction","pages":"3--15","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"mahamunkar2022deep","type":"Journal / Article","year":"2022","title":"Deep learning model for black spot classification","author":"Mahamunkar, Geetanjali S and Kiwelekar, Arvind W and Netak, Laxman D","venue":"International Journal of Performability Engineering","pages":"222","volume":"18","number":"3","publisher":""},
+
+{"key":"mahamunkar2021comparison","type":"Conference","year":"2021","title":"Comparison of various deep CNN models for land use and land cover classification","author":"Mahamunkar, Geetanjali S and Netak, Laxman D","venue":"International Conference on Intelligent Human Computer Interaction","pages":"499--510","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"mukkawar2021architectural","type":"Conference","year":"2021","title":"Architectural view of non-face-to-face experiential learning through the immersive technologies","author":"Mukkawar, Vinayak V and Netak, Laxman D and Nikam, Valmik B","venue":"International Conference on Intelligent Human Computer Interaction","pages":"282--291","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"gandhi2021usability","type":"Conference","year":"2021","title":"Usability analysis for blockchain-based applications","author":"Gandhi, Sanil S and Patil, Yogesh N and Netak, Laxman D and Gaikwad, Harsha R","venue":"International Conference on Intelligent Human Computer Interaction","pages":"349--360","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"laddha2021validating","type":"Conference","year":"2021","title":"Validating Pre-requisite Dependencies Through Student Response Analysis","author":"Laddha, Manjushree D and Navandar, Swanand and Netak, Laxman D","venue":"International Conference on Intelligent Human Computer Interaction","pages":"218--228","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"kiwelekar2022automatic","type":"Journal / Article","year":"2022","title":"Automatic grading of student’s presentation skills based on powerpoint presentation and audio","author":"Kiwelekar, AW and Netak, LD and others","venue":"U. Porto journal of engineering","pages":"95--107","volume":"8","number":"2","publisher":""},
+
+{"key":"mahajan2021applications","type":"Conference","year":"2021","title":"Applications of predictive analytics in marine transportation","author":"Mahajan, Prasad C and Kiwelekar, Arvind W and Netak, Laxman D and Ghodake, Akshay","venue":"2021 International Conference on Computing, Communication and Green Engineering (CCGE)","pages":"1--7","volume":"","number":"","publisher":"IEEE"},
+
+{"key":"kiwelekar2022exemplar","type":"Book Chapter","year":"2022","title":"Exemplar Use-Cases for Training Teachers on Learning Analytics","author":"Kiwelekar, Arvind W and Laddha, Manjushree D and Netak, Laxman D","venue":"Handbook on Intelligent Techniques in the Educational Process: Vol 1 Recent Advances and Case Studies","pages":"103--119","volume":"","number":"","publisher":"Springer International Publishing Cham"},
+
+{"key":"gandhi2022security","type":"Book Chapter","year":"2022","title":"Security requirement analysis of blockchain-based e-voting systems","author":"Gandhi, Sanil S and Kiwelekar, Arvind W and Netak, Laxman D and Wankhede, Hansra S","venue":"Intelligent Communication Technologies and Virtual Mobile Networks: Proceedings of ICICV 2022","pages":"73--85","volume":"","number":"","publisher":"Springer Nature Singapore Singapore"},
+
+{"key":"ld2001face","type":"Conference","year":"2001","title":"Face The Challenges for Integrating Global Technical Education","author":"LD Netak, BF Jogi","venue":"Annual Convention of ISTE, Nashik, Maharashtra","pages":"","volume":"","number":"","publisher":""},
+
+{"key":"ld2005secured","type":"Conference","year":"2005","title":"Secured Payment Distribution in Peer-to-Peer (P2P)","author":"LD Netak, Jayant S. Umale","venue":"National Conference on Database Management Systems \\& Networks, Erode, Tamilnadu","pages":"","volume":"","number":"","publisher":""},
+
+{"key":"ld2005survey","type":"Conference","year":"2005","title":"A survey of decision tree learning algorithms: 1D3, C4.5, C5.0 \\& Nec4.5","author":"LD Netak, Pereira Danny J","venue":"National Conference on Emerging Technologies \\& Applications (ETA), Saurashtra University, Rajkot-360 005, Rajastan","pages":"","volume":"","number":"","publisher":""},
+
+{"key":"ld2005comparison","type":"Conference","year":"2005","title":"Comparison of Decision Tree Learning Algorithms: ID3, C3.4 \\& NeC4.5","author":"LD Netak, Pereira Danny J","venue":"National Conference on Sun Rising Technologies(NCSRT 2005), Parshvanath College of En- gineering, Thane","pages":"","volume":"","number":"","publisher":""},
+
+{"key":"ld2005rijndael","type":"Conference","year":"2005","title":"Rijndael an Approach to Cryptology","author":"LD Netak, Renu Deshpande","venue":"National Conference on Control Instrumentation System Conference (CISCON 2005), Manipal Institute of Technology (MIT), Manipal, Karnataka","pages":"","volume":"","number":"","publisher":""},
+
+{"key":"ld2005project","type":"Conference","year":"2005","title":"Project Effort Predictions In Early Stages of Life Cycle: An Empirical Study","author":"LD Netak, Amol Pande","venue":"National Conference on Sun Rising Technologies (NCSRT 2005), Parshvanath College of Engineering, Thane 400 601","pages":"","volume":"","number":"","publisher":""},
+
+{"key":"ld2007super","type":"Conference","year":"2007","title":"Super Resolution Methods to Achieve High Quality Imaging","author":"LD Netak, Sanjay S. Deshmukh","venue":"National Conference on Electro InfoCom-2007, St. Francis Institute of Technology, Mumbai","pages":"","volume":"","number":"","publisher":""},
+
+{"key":"ld2012energy","type":"Journal / Article","year":"2012","title":"Energy Efficient Approach for ConverSS: Routing Protocol for Wireless Networks","author":"LD Netak, Snehal J. Koparde","venue":"International Journal of Computer Applications","pages":"19--22","volume":"48","number":"13","publisher":""},
+
+{"key":"garg2022ai","type":"Journal / Article","year":"2022","title":"AI-Based Techniques for Smart Ships","author":"Garg, Rachit and Kiwelekar, Arvind W and Netak, Laxman D","venue":"Smart Ships","pages":"53--74","volume":"","number":"","publisher":"CRC Press Boca Raton, FL, USA"},
+
+{"key":"netak2021blockchain","type":"Journal / Article","year":"2021","title":"Blockchain-based security services for fog computing","author":"Netak, Laxman","venue":"","pages":"","volume":"","number":"","publisher":""},
+
+{"key":"netak2020use","type":"Journal / Article","year":"2020","title":"Use-cases of Blockchain Technology for Humanitarian Engineering","author":"Netak, Laxman","venue":"","pages":"","volume":"","number":"","publisher":""},
+
+{"key":"kiwelekar2020use","type":"Journal / Article","year":"2020","title":"Use-cases of Blockchain Technology for Humanitarian Engineering","author":"Kiwelekar, Arvind W and Gandhi, Sanil S and Netak, Laxaman D and Deosarkar, Shankar B","venue":"arXiv preprint arXiv:2012.01168","pages":"","volume":"","number":"","publisher":""},
+
+{"key":"gandhi2023blockchain","type":"Journal / Article","year":"2023","title":"A blockchain-based data-driven trustworthy approval process system","author":"Gandhi, Sanil and Kiwelekar, Arvind and Netak, Laxman and Shahare, Shashank","venue":"International journal of information management data insights","pages":"100162","volume":"3","number":"1","publisher":"Elsevier"},
+
+{"key":"borade2023evaluating","type":"Journal / Article","year":"2023","title":"Evaluating the authenticity of the PowerPoint presentations’ contents using word embedding techniques","author":"Borade, JG and Netak, LD and Kiwelekar, AW","venue":"International Journal of Information Technology","pages":"2303--2316","volume":"15","number":"4","publisher":"Springer Nature Singapore Singapore"},
+
+{"key":"borade2022automated","type":"Journal / Article","year":"2022","title":"Automated Grading of PowerPoint Presentations Using Latent Semantic Analysis","author":"Borade, Jyoti G and Kiwelekar, Arvind W and Netak, Laxman D","venue":"Revue d'Intelligence Artificielle","pages":"305","volume":"36","number":"2","publisher":"International Information and Engineering Technology Association (IIETA)"},
+
+{"key":"chowdhary2013robust","type":"Journal / Article","year":"2013","title":"Robust Methodologies for Congestion Control.","author":"Chowdhary, Girish V and Netak, Laxman D and Javanjal, Ratan B","venue":"International Journal of Computer Science \\& Management Studies","pages":"1","volume":"13","number":"7","publisher":""},
+
+{"key":"chowdhary2013constant","type":"Journal / Article","year":"2013","title":"Constant-Time, Large-Scale Archetypes for Hash Tables.","author":"Chowdhary, Girish V and Netak, Laxman D and Javanjal, Ratan B","venue":"International Journal of Computer Science \\& Management Studies","pages":"192","volume":"13","number":"7","publisher":""},
+
+{"key":"patil2023small","type":"Conference","year":"2023","title":"A Small-Scale Ontology to Represent Knowledge About Question Items","author":"Patil, Yogesh N and Gandhi, Sanil S and Kiwelekar, Arvind W and Netak, Laxman D","venue":"International Conference on Smart Trends for Information Technology and Computer Communications","pages":"47--58","volume":"","number":"","publisher":"Springer Nature Singapore Singapore"},
+
+{"key":"model2023landslide","type":"Conference","year":"2023","title":"Landslide Prediction Using Multi-Layer","author":"Model, Perceptron and Mahamunkar, Geetanjali and Kiwelekar, Arvind and Netak, Laxman","venue":"Intelligent Computing: Proceedings of the 2023 Computing Conference, Volume 1","pages":"398","volume":"1","number":"","publisher":"Springer Nature"},
+
+{"key":"mahamunkar2023landslide","type":"Conference","year":"2023","title":"Landslide prediction using multi-layer perceptron model","author":"Mahamunkar, Geetanjali and Kiwelekar, Arvind and Netak, Laxman","venue":"Science and Information Conference","pages":"398--407","volume":"","number":"","publisher":"Springer Nature Switzerland Cham"},
+
+{"key":"lokare2023power","type":"Journal / Article","year":"2023","title":"POWER SPECTRAL ANALYSIS OF VARYING COMPLEXITY TASKS USING EEGLAB.","author":"Lokare, Varsha T and Kiwelekar, AW and Netak, LD and Jadhav, NS","venue":"Suranaree Journal of Science \\& Technology","pages":"1","volume":"30","number":"4","publisher":""},
+
+{"key":"gaikwad2023urdu","type":"Conference","year":"2023","title":"Urdu sentiment analysis: A review","author":"Gaikwad, Harsha R and Mujawar, Namira and Sawant, Nupur and Kiwelekar, Arvind and Netak, Laxman","venue":"International Conference on Data Science and Applications","pages":"463--472","volume":"","number":"","publisher":"Springer Nature Singapore Singapore"},
+
+{"key":"garg202353","type":"Book Chapter","year":"2023","title":"53 AI-based Techniques for Smart Ships","author":"Garg, Rachit and Kiwelekar, Arvind W and Netak, Laxman D","venue":"Smart Ships","pages":"53--74","volume":"","number":"","publisher":"CRC Press 6000 Broken Sound Parkway NW, Suite 300, Boca Raton, FL 33487-2742"},
+
+{"key":"mukkawar2022technological","type":"Conference","year":"2022","title":"Technological Evaluation of Virtual and Augmented Reality to Impart Social","author":"Mukkawar, Vinayak V and Netak, Laxman D","venue":"Intelligent Human Computer Interaction: 13th International Conference, IHCI 2021, Kent, OH, USA, December 20--22, 2021, Revised Selected Papers","pages":"62","volume":"","number":"","publisher":"Springer Nature"},
+
+{"key":"mahamunkar2022google","type":"Journal / Article","year":"2022","title":"Google Earth Engine: A Case Study","author":"Mahamunkar, Geetanjali S and Kiwelekar, Arvind W and Netak, Laxman D","venue":"ICT Systems and Sustainability: Proceedings of ICT4SD 2021, Volume 1","pages":"187","volume":"1","number":"","publisher":"Springer Nature"},
+
+{"key":"borade2022machine","type":"Conference","year":"2022","title":"Machine Learning Techniques for Grading","author":"Borade, Jyoti G and Netak, Laxman D","venue":"Intelligent Human Computer Interaction: 13th International Conference, IHCI 2021, Kent, OH, USA, December 20--22, 2021, Revised Selected Papers","pages":"3","volume":"","number":"","publisher":"Springer Nature"},
+
+{"key":"shendage2025comprehensive","type":"Conference","year":"2025","title":"A Comprehensive Review of Deep Learning and Machine Learning Approaches for Detecting Plant Nutrient Deficiencies and Diseases","author":"Shendage, Pradip N and Sonekar, Shrikant V and Netak, Laxman D","venue":"2025 IEEE Pune Section International Conference (PuneCon)","pages":"1--7","volume":"","number":"","publisher":"IEEE"},
+
+{"key":"patil2026secure","type":"Conference","year":"2026","title":"A secure fog and blockchain-enabled framework for real-time air quality monitoring","author":"Patil, Pramod Ravindra and Kiwilekar, Arvind W and Netak, LD","venue":"AIP Conference Proceedings","pages":"050004","volume":"3475","number":"1","publisher":"AIP Publishing LLC"},
+
+{"key":"dhanraj2024dr","type":"Conference","year":"2024","title":"Dr. Babasaheb Ambedkar - A Design Engineer for India’s Futuristic Democratic Vehicle","author":"Dhanraj B. Waghmare, Popat B. Lokhande, Ganesh S. Warkhade, Laxman D. Netak, Harishchandra A. Akarte","venue":"","pages":"","volume":"","number":"","publisher":""},
+
+{"key":"netak2021pulse","type":"Journal / Article","year":"2021","title":"i-Pulse: A NLP based novel approach for employee engagement in logistics organization","author":"Netak, Laxman","venue":"","pages":"","volume":"","number":"","publisher":""}
+];
+
+const results=document.getElementById("results");
+const search=document.getElementById("search");
+const year=document.getElementById("year");
+const type=document.getElementById("type");
+const empty=document.getElementById("empty");
+
+const yearList=[
+    ...new Set(
+        publications.map(p=>p.year).filter(y=>/^\d+$/.test(y))
+    )
+].sort((a,b)=>b-a);
+
+yearList.forEach(y=>{
+    const o=document.createElement("option");
+    o.value=y;
+    o.textContent=y;
+    year.appendChild(o);
+});
+
+document.getElementById("total").textContent=publications.length;
+document.getElementById("years").textContent=yearList.length;
+document.getElementById("journals").textContent=
+    publications.filter(p=>p.type==="Journal / Article").length;
+document.getElementById("conf").textContent=
+    publications.filter(p=>p.type==="Conference").length;
+
+function esc(v){
+    return String(v??"").replace(
+        /[&<>"']/g,
+        c=>({
+            "&":"&amp;",
+            "<":"&lt;",
+            ">":"&gt;",
+            '"':"&quot;",
+            "'":"&#39;"
+        }[c])
+    );
 }
+
+function render(){
+
+    const q=search.value.toLowerCase().trim();
+    const yf=year.value;
+    const tf=type.value;
+
+    const filtered=publications.filter(p=>
+        (!yf||p.year===yf)&&
+        (!tf||p.type===tf)&&
+        (
+            !q||
+            [p.title,p.author,p.venue,p.publisher,p.type,p.year,p.key]
+            .join(" ")
+            .toLowerCase()
+            .includes(q)
+        )
+    );
+
+    const groups={};
+
+    filtered.forEach(p=>
+        (groups[p.year]??=[]).push(p)
+    );
+
+    results.innerHTML="";
+
+    Object.keys(groups)
+    .sort((a,b)=>Number(b)-Number(a))
+    .forEach(y=>{
+
+        const d=document.createElement("details");
+        d.className="year";
+        d.open=true;
+
+        const s=document.createElement("summary");
+
+        s.innerHTML=
+            `<span>${esc(y)}</span>
+             <span class="count">
+             ${groups[y].length}
+             publication${groups[y].length===1?"":"s"}
+             </span>`;
+
+        d.appendChild(s);
+
+        groups[y].forEach(p=>{
+
+            const card=document.createElement("article");
+            card.className="pub";
+
+            let extra=[];
+
+            if(p.venue)
+                extra.push(`<b>${esc(p.venue)}</b>`);
+
+            if(p.pages)
+                extra.push(`pp. ${esc(p.pages)}`);
+
+            if(p.volume)
+                extra.push(`Vol. ${esc(p.volume)}`);
+
+            if(p.number)
+                extra.push(`No. ${esc(p.number)}`);
+
+            if(p.publisher)
+                extra.push(esc(p.publisher));
+
+            card.innerHTML=`
+                <h3>${esc(p.title)}</h3>
+
+                <div class="meta">
+                    <span class="badge">${esc(p.type)}</span>
+                    ${esc(p.author)}
+                </div>
+
+                <div class="meta" style="margin-top:5px">
+                    ${extra.join(" · ")}
+                </div>
+
+                <div class="key">
+                    BibTeX key: ${esc(p.key)}
+                </div>
+            `;
+
+            d.appendChild(card);
+        });
+
+        results.appendChild(d);
+    });
+
+    empty.style.display=filtered.length?"none":"block";
+}
+
+search.addEventListener("input",render);
+year.addEventListener("change",render);
+type.addEventListener("change",render);
+
+document.getElementById("reset").onclick=()=>{
+    search.value="";
+    year.value="";
+    type.value="";
+    render();
+};
+
+document.getElementById("expand").onclick=()=>{
+    document.querySelectorAll(".year")
+    .forEach(x=>x.open=true);
+};
+
+document.getElementById("collapse").onclick=()=>{
+    document.querySelectorAll(".year")
+    .forEach(x=>x.open=false);
+};
+
+render();
+
 </script>
 
 </body>
