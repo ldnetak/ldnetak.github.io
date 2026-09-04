@@ -1,171 +1,207 @@
-Yes. I can combine the **Academic Experience** and **Administrative Experience** tables into the same `Activities.html` structure. Since the actual `Activities.html` file is not attached here, below is the complete section code to insert into it.
+Certainly. Use your **existing `style.css`** for the navigation and tables instead of inline CSS. Add the following CSS to `style.css`:
 
-```html
-<!-- ACADEMIC EXPERIENCE -->
-<section class="section">
-    <h2>Academic Experience</h2>
+```css
+/* ==============================
+   EXPERIENCE TABLES
+   ============================== */
 
-    <div style="overflow-x:auto;">
-        <table style="width:100%; border-collapse:collapse; margin-top:15px; font-size:15px;">
-            <thead>
-                <tr style="background:#2c3e50; color:white;">
-                    <th style="padding:10px; border:1px solid #ddd; text-align:center;">Sr. No.</th>
-                    <th style="padding:10px; border:1px solid #ddd; text-align:left;">Post</th>
-                    <th style="padding:10px; border:1px solid #ddd; text-align:left;">Institute</th>
-                    <th style="padding:10px; border:1px solid #ddd; text-align:center;">Period</th>
-                    <th style="padding:10px; border:1px solid #ddd; text-align:center;">Regular / Adhoc</th>
-                </tr>
-            </thead>
+.experience-section {
+    margin-top: 25px;
+}
 
-            <tbody>
-                <tr>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">1</td>
-                    <td style="padding:10px; border:1px solid #ddd;"><strong>Professor</strong></td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        Dr. Babasaheb Ambedkar Technological University, Lonere
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">
-                        30/01/2016 to till date
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">Regular</td>
-                </tr>
+.experience-table-wrapper {
+    overflow-x: auto;
+}
 
-                <tr>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">2</td>
-                    <td style="padding:10px; border:1px solid #ddd;"><strong>Associate Professor</strong></td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        Dr. Babasaheb Ambedkar Technological University, Lonere
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">
-                        31/07/2007 to 29/01/2016
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">Regular</td>
-                </tr>
+.experience-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 15px;
+}
 
-                <tr>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">3</td>
-                    <td style="padding:10px; border:1px solid #ddd;"><strong>Assistant Professor</strong></td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        Dr. Babasaheb Ambedkar Technological University, Lonere
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">
-                        31/04/2004 to 31/07/2007
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">Regular</td>
-                </tr>
+.experience-table th {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
 
-                <tr>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">4</td>
-                    <td style="padding:10px; border:1px solid #ddd;"><strong>Lecturer</strong></td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        Dr. Babasaheb Ambedkar Technological University, Lonere
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">
-                        29/08/1998 to 31/04/2004
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">Regular</td>
-                </tr>
+.experience-table th:first-child,
+.experience-table td:first-child {
+    text-align: center;
+    width: 60px;
+}
 
-                <tr>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">5</td>
-                    <td style="padding:10px; border:1px solid #ddd;"><strong>Lecturer</strong></td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        MGM’s College of Engineering, Nanded
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">
-                        03/08/1996 to 28/08/1998
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">Regular</td>
-                </tr>
+.experience-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
 
-                <tr>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">6</td>
-                    <td style="padding:10px; border:1px solid #ddd;"><strong>Lecturer</strong></td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        SGGS College of Engineering, Nanded
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">
-                        August 1995 to May 1996
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">Adhoc</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
+.experience-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
+.experience-table tbody tr:hover {
+    background-color: #f2f2f2;
+}
 
-<!-- ADMINISTRATIVE EXPERIENCE -->
-<section class="section">
-    <h2>Administrative Experience</h2>
+.experience-table .center {
+    text-align: center;
+}
 
-    <div style="overflow-x:auto;">
-        <table style="width:100%; border-collapse:collapse; margin-top:15px; font-size:15px;">
-            <thead>
-                <tr style="background:#2c3e50; color:white;">
-                    <th style="padding:10px; border:1px solid #ddd; text-align:center;">Sr. No.</th>
-                    <th style="padding:10px; border:1px solid #ddd; text-align:left;">Position</th>
-                    <th style="padding:10px; border:1px solid #ddd; text-align:center;">Duration</th>
-                    <th style="padding:10px; border:1px solid #ddd; text-align:left;">Institution</th>
-                </tr>
-            </thead>
+/* ==============================
+   MOBILE RESPONSIVE
+   ============================== */
 
-            <tbody>
-                <tr>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">1</td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        <strong>Head, Department of Computer Engineering</strong>
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">
-                        05/03/2010 to 02/08/2010
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        Dr. Babasaheb Ambedkar Technological University, Lonere (MS)
-                    </td>
-                </tr>
+@media (max-width: 700px) {
+    .experience-table {
+        font-size: 14px;
+    }
 
-                <tr>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">2</td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        <strong>Head, Department of Computer Engineering</strong>
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">
-                        10/01/2005 to 12/02/2006
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        Dr. Babasaheb Ambedkar Technological University, Lonere (MS)
-                    </td>
-                </tr>
-
-                <tr>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">3</td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        <strong>Head, Department of Computer Engineering</strong>
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">
-                        02/09/2011 to 10/11/2011
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        Dr. Babasaheb Ambedkar Technological University, Lonere (MS)
-                    </td>
-                </tr>
-
-                <tr>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">4</td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        <strong>Head, Department of Computer Engineering</strong>
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd; text-align:center;">
-                        09/12/2019 to 04/07/2023
-                    </td>
-                    <td style="padding:10px; border:1px solid #ddd;">
-                        Dr. Babasaheb Ambedkar Technological University, Lonere (MS)
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
+    .experience-table th,
+    .experience-table td {
+        padding: 8px;
+    }
+}
 ```
 
-This uses your **existing CSS and navigation**; no CSS changes are required.
+Then use this HTML in `Activities.html`:
+
+```html
+<!-- NAVIGATION BAR -->
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="Activities.html">Activities</a>
+</div>
+
+
+<div class="container">
+
+    <!-- ACADEMIC EXPERIENCE -->
+    <section class="experience-section">
+        <h2>Academic Experience</h2>
+
+        <div class="experience-table-wrapper">
+            <table class="experience-table">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Post</th>
+                        <th>Institute</th>
+                        <th>Period</th>
+                        <th>Regular / Adhoc</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Professor</strong></td>
+                        <td>Dr. Babasaheb Ambedkar Technological University, Lonere</td>
+                        <td class="center">30/01/2016 to till date</td>
+                        <td class="center">Regular</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Associate Professor</strong></td>
+                        <td>Dr. Babasaheb Ambedkar Technological University, Lonere</td>
+                        <td class="center">31/07/2007 to 29/01/2016</td>
+                        <td class="center">Regular</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Assistant Professor</strong></td>
+                        <td>Dr. Babasaheb Ambedkar Technological University, Lonere</td>
+                        <td class="center">31/04/2004 to 31/07/2007</td>
+                        <td class="center">Regular</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td><strong>Lecturer</strong></td>
+                        <td>Dr. Babasaheb Ambedkar Technological University, Lonere</td>
+                        <td class="center">29/08/1998 to 31/04/2004</td>
+                        <td class="center">Regular</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td><strong>Lecturer</strong></td>
+                        <td>MGM’s College of Engineering, Nanded</td>
+                        <td class="center">03/08/1996 to 28/08/1998</td>
+                        <td class="center">Regular</td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td><strong>Lecturer</strong></td>
+                        <td>SGGS College of Engineering, Nanded</td>
+                        <td class="center">August 1995 to May 1996</td>
+                        <td class="center">Adhoc</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- ADMINISTRATIVE EXPERIENCE -->
+    <section class="experience-section">
+        <h2>Administrative Experience</h2>
+
+        <div class="experience-table-wrapper">
+            <table class="experience-table">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Position</th>
+                        <th>Duration</th>
+                        <th>Institution</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Head, Department of Computer Engineering</strong></td>
+                        <td class="center">05/03/2010 to 02/08/2010</td>
+                        <td>Dr. Babasaheb Ambedkar Technological University, Lonere (MS)</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Head, Department of Computer Engineering</strong></td>
+                        <td class="center">10/01/2005 to 12/02/2006</td>
+                        <td>Dr. Babasaheb Ambedkar Technological University, Lonere (MS)</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Head, Department of Computer Engineering</strong></td>
+                        <td class="center">02/09/2011 to 10/11/2011</td>
+                        <td>Dr. Babasaheb Ambedkar Technological University, Lonere (MS)</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td><strong>Head, Department of Computer Engineering</strong></td>
+                        <td class="center">09/12/2019 to 04/07/2023</td>
+                        <td>Dr. Babasaheb Ambedkar Technological University, Lonere (MS)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+```
+
+This keeps the **navigation styling in your existing CSS** and moves the **experience-table styling into `style.css`**, making `Activities.html` cleaner and easier to maintain.
